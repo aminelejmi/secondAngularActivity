@@ -1,0 +1,24 @@
+<li>
+    <div [ngClass]=" { 'card': true,
+                     'alert': true,
+                     'alert-danger': loveIts < 0,
+                     'alert-success': loveIts > 0,
+                     'alert-info': loveIts == 0
+                    }">
+        <div class="card-title d-flex justify-content-between">
+            <h4>{{ title }}</h4>
+            <h6>{{ created_at | date:'dd/mm/yyyy hh:mm aa' }}</h6>
+        </div>
+        <div class="card-body">
+            <p>{{ content }}</p>
+
+            <div>
+                <button class="btn btn-success" (click)="onLoveIt()" style="margin-right: 10px;">I love It</button>
+                <button class="btn btn-danger" (click)="onDontLoveIt()" style="margin-right: 10px;"> I don't love it
+                </button>
+                <button class="btn btn-outline-danger" (click)="onDelete(title)">Supprimer</button>
+                <span>Love Its = {{ loveIts }}</span>
+            </div>
+        </div>
+    </div>
+</li>

@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-between align-items-center">
+    <h2>Liste des Posts</h2>
+    <a routerLink="/newPost">Ajouter un post</a>
+</div>
+<ul class="list-unstyled">
+    <app-post-list-item
+            *ngFor="let post of posts"
+            [title]="post.title"
+            [content]="post.content"
+            [loveIts]="post.loveIts"
+            [created_at]="post.created_at"
+    ></app-post-list-item>
+</ul>
